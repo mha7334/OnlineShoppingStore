@@ -10,21 +10,7 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Category)
-        </th>
-        <th></th>
-    </tr>
+   
 
 @foreach (var item in Model.Products) {
     <tr>
@@ -48,4 +34,9 @@
     </tr>
 }
 
+  
 </table>
+
+<div>
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new {page = x }))
+</div>

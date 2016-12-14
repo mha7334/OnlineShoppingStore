@@ -7,20 +7,20 @@ using System.Web;
 using System.Web.Mvc;
 
 
-namespace OnlineShoppingStore.UI.HTMLHelpers
+namespace OnlineShoppingStore.UI.HtmlHelpers
 {
     public static class PagingHelpers
     {
         public static MvcHtmlString PageLinks(this HtmlHelper html, PagingInfo pagingInfo, Func<int, string> pageUrl)
         {
             StringBuilder result = new StringBuilder();
-            for (int i = 0; i < pagingInfo.TotalPages; i++)
+            for (int i = 1; i < pagingInfo.TotalPages; i++)
             {
                 TagBuilder tag = new TagBuilder("a");
                 tag.MergeAttribute("href", pageUrl(i));
                 tag.InnerHtml = i.ToString();
                 
-                if(i ==pagingInfo.CurrentPage)
+                if(i == pagingInfo.CurrentPage)
                 {
                     tag.AddCssClass("selected");
                     tag.AddCssClass("btn-primary");
