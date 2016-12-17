@@ -4,8 +4,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Online Shopping Store</title>   
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
 </head>
 <body>    
-      @RenderBody()    
+      <div class="navbar navbar-inverse" role="navigation">
+          <a class="navbar-brand" href="#">Online Shpping Store</a>
+          @Html.Action("Summary", "Cart")
+      </div>
+    <div class="row panel">
+        <div id="categories" class="col-lg-3">
+            @Html.Action("Menu", "Nav")
+        </div>
+        <div class="col-lg-7">
+            @RenderBody()
+        </div>
+    </div>
+      
 </body>
 </html>

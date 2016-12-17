@@ -14,7 +14,7 @@ namespace OnlineShoppingStore.UI.App_Start
     using Moq;
     using OnlineShoppingStore.Domain.Entities;
     using System.Collections.Generic;
-    using OnlineShoppingStore.Domain.EFProductRepository;
+    using OnlineShoppingStore.Domain.Concrete;
 
     public static class NinjectWebCommon 
     {

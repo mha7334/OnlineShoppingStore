@@ -1,16 +1,14 @@
 ﻿using OnlineShoppingStore.Domain.Entities;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnlineShoppingStore.Domain.EFProductRepository
+namespace OnlineShoppingStore.Domain.Abstract
 {
-    public class EFDbContext :DbContext
+    public interface IOrderProcessor
     {
-        public DbSet<Product> Products { get; set; }
-
+        void ProcessOrder(Cart cart, ShippingDetails shippingDetails);
     }
 }
